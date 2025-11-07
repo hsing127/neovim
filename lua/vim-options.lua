@@ -57,3 +57,11 @@ vim.keymap.set('v', '<M-l>', '<Right>', { noremap = true, desc = "Extend selecti
 -- Use 'cl' instead of 's' for substitute character (does the same thing)
 vim.keymap.set('n', 's', '<Nop>', { noremap = true, desc = "Disabled (use cl for substitute)" })
 vim.keymap.set('n', 'S', '<Nop>', { noremap = true, desc = "Disabled (use cc for substitute line)" })
+
+-- Terminal mode mappings - escape terminal mode with Esc
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true, desc = "Exit terminal mode" })
+-- Also allow Ctrl+hjkl to work in terminal mode for window navigation
+vim.keymap.set('t', '<C-h>', '<C-\\><C-n><C-h>', { noremap = true, desc = "Go to left window" })
+vim.keymap.set('t', '<C-j>', '<C-\\><C-n><C-j>', { noremap = true, desc = "Go to below window" })
+vim.keymap.set('t', '<C-k>', '<C-\\><C-n><C-k>', { noremap = true, desc = "Go to above window" })
+vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-l>', { noremap = true, desc = "Go to right window" })
