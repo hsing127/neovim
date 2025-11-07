@@ -1,11 +1,21 @@
 return {
-  {
-    "tpope/vim-fugitive",
-  },
-  {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
-  }
+	{
+		"tpope/vim-fugitive",
+	},
+	{
+		-- Testing stuff
+		"lewis6991/gitsigns.nvim",
+		opts = {
+			signs = {
+				add = { text = "+" },
+				change = { text = "~" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+			},
+		},
+		config = function()
+			require("gitsigns").setup()
+		end,
+	},
 }

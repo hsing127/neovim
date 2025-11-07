@@ -9,6 +9,7 @@ return {
         highlight = { enable = true },
         indent = { enable = true },
       })
+    vim.keymap.set('n', '<Leader>r', vim.lsp.buf.rename, { desc = 'LSP Rename' })
     end
   }
 }
