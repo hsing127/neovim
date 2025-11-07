@@ -31,9 +31,6 @@ vim.opt.splitbelow = true  -- Horizontal splits go below
 vim.wo.number = true
 vim.opt.relativenumber = true
 
--- Clear search highlight
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
-
 -- Map option+hjkl to arrow keys (so they don't change modes)
 -- In insert mode, option+hjkl moves cursor without leaving insert mode
 vim.keymap.set('i', '<M-h>', '<Left>', { noremap = true, desc = "Move left (stay in insert)" })
