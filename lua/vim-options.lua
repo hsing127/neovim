@@ -1,10 +1,17 @@
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
 vim.g.mapleader = " "
 vim.g.background = "light"
 vim.cmd("set clipboard=unnamed")
+
+-- Editor behavior
+vim.opt.smartindent = true      -- Smart auto-indenting for code blocks
+vim.opt.wrap = false            -- Don't wrap long lines
+vim.opt.termguicolors = true    -- Enable 24-bit RGB colors
+vim.opt.signcolumn = "yes"      -- Always show sign column (prevents UI jumping)
+vim.opt.updatetime = 50         -- Faster update time for plugins (ms)
 
 -- File handling
 vim.opt.swapfile = false
@@ -65,3 +72,9 @@ vim.keymap.set('t', '<C-h>', '<C-\\><C-n><C-h>', { noremap = true, desc = "Go to
 vim.keymap.set('t', '<C-j>', '<C-\\><C-n><C-j>', { noremap = true, desc = "Go to below window" })
 vim.keymap.set('t', '<C-k>', '<C-\\><C-n><C-k>', { noremap = true, desc = "Go to above window" })
 vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-l>', { noremap = true, desc = "Go to right window" })
+
+-- Reload vim-options without restarting Neovim
+vim.keymap.set('n', '<leader>rr', function()
+	vim.cmd('luafile ~/.config/nvim/lua/vim-options.lua')
+	print("✓ Vim options reloaded!")
+end, { desc = "[R]eload vim-options" })
