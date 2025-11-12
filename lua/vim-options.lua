@@ -11,6 +11,9 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
 
+vim.opt.title = true
+vim.opt.titlestring = "%t"   -- filename only
+
 -- Undo persistence - keep undo history after closing files
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"
