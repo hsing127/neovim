@@ -78,3 +78,45 @@ vim.keymap.set('n', '<leader>rr', function()
 	vim.cmd('luafile ~/.config/nvim/lua/vim-options.lua')
 	print("✓ Vim options reloaded!")
 end, { desc = "[R]eload vim-options" })
+
+-- Make UI elements more visible on light backgrounds
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		-- Keep background transparent
+		vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+		
+		-- Make line numbers darker and more visible
+		vim.api.nvim_set_hl(0, "LineNr", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e78284", bg = "NONE", bold = true })
+		
+		-- Make window borders darker and more visible
+		vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "VertSplit", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		
+		-- Make Telescope borders transparent/darker
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = "#e78284", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		
+		-- Make Harpoon menu transparent
+		vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "HarpoonTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		
+		-- Make all floating windows transparent
+		vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "FloatTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
+	end,
+})
