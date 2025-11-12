@@ -79,7 +79,7 @@ vim.keymap.set('n', '<leader>rr', function()
 	print("✓ Vim options reloaded!")
 end, { desc = "[R]eload vim-options" })
 
--- Make UI elements more visible on light backgrounds
+-- Make UI elements more visible on dark backgrounds
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
@@ -88,35 +88,35 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 		vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
 		
-		-- Make line numbers darker and more visible
-		vim.api.nvim_set_hl(0, "LineNr", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		-- Make line numbers lighter and more visible on dark backgrounds
+		vim.api.nvim_set_hl(0, "LineNr", { fg = "#c6d0f5", bg = "NONE", bold = true })
 		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e78284", bg = "NONE", bold = true })
 		
-		-- Make window borders darker and more visible
-		vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#1e1e2e", bg = "NONE", bold = true })
-		vim.api.nvim_set_hl(0, "VertSplit", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		-- Make window borders lighter and more visible
+		vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#c6d0f5", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "VertSplit", { fg = "#c6d0f5", bg = "NONE", bold = true })
 		
-		-- Make Telescope borders transparent/darker
-		vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#1e1e2e", bg = "NONE" })
+		-- Make Telescope borders transparent/lighter
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#c6d0f5", bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "NONE" })
-		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "#c6d0f5", bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = "#e78284", bg = "NONE" })
-		vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
-		vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = "#c6d0f5", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#c6d0f5", bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = "NONE" })
-		vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
-		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = "#c6d0f5", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#c6d0f5", bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "NONE" })
-		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = "#c6d0f5", bg = "NONE", bold = true })
 		
 		-- Make Harpoon menu transparent
-		vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = "#1e1e2e", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = "#c6d0f5", bg = "NONE" })
 		vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = "NONE" })
-		vim.api.nvim_set_hl(0, "HarpoonTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "HarpoonTitle", { fg = "#c6d0f5", bg = "NONE", bold = true })
 		
 		-- Make all floating windows transparent
-		vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#1e1e2e", bg = "NONE" })
-		vim.api.nvim_set_hl(0, "FloatTitle", { fg = "#1e1e2e", bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#c6d0f5", bg = "NONE" })
+		vim.api.nvim_set_hl(0, "FloatTitle", { fg = "#c6d0f5", bg = "NONE", bold = true })
 	end,
 })
